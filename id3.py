@@ -6,7 +6,7 @@ import networkx as nx
 import pandas as pd
 
 #Base de treinamento
-Treinamento = pd.read_excel('c:/Users/moniq/Documents/UFAL/IA 2021.1/KDD/Treinamento.xlsx')
+Treinamento = pd.read_excel('c:/Users/moniq/Documents/UFAL/IA 2021.1/ID3/Treinamento.xlsx')
 
 grafo = nx.Graph()
 
@@ -103,39 +103,29 @@ def Entropia(Tabela,Atb,T):
 # ID3
 def ID3(Tabela,Atributos,Res,T,grafo,Atb_usado):
     Classes = Variaçoes(Tabela,Res,T)
-    #print(Classes)
     if len(Classes) > 1:
-        #print(len(Atributos))
         if len(Atributos) > 0:
-            esc = 0.0
-            menor_E = 99999999
+            maior_E = -1
             for g in Atributos:
-                #print(g)
                 esc=Entropia_total(Tabela,Res,g,T)
-                if esc < menor_E:
+                if esc > maior_E:
                     z = g 
-                    menor_E=esc
+                    maior_E=esc
 
             Atb = Variaçoes(Tabela,z,T)
             groups = Tabela.groupby(z)
             Atributos.remove(z)
-            #print(Atributos)
             grafo.add_node(z)
             grafo.add_edge(Atb_usado,z)
             for i in Atb:
                 #print(i)
                 b = groups.get_group(i)
-                
-                grafo.add_node(i)
-                #print(grafo.nodes())
-                
                 b.reset_index(inplace=True, drop=True)
                 b.loc[:, ~b.columns.str.match('Unnamed')]
-                c = b[[z,Res]]
-                #print(c.head(160))
                 b = b.drop(columns=[z])
                 T = b[b.columns[0]].count()
                 ID3(b,Atributos,Res,T,grafo,i)
+                grafo.add_node(i)
                 grafo.add_edge(z,i)
                 
         else:
@@ -176,7 +166,7 @@ def Menu():
     Atributos = ['Idade', 'Gênero', 'Trabalha?', 'Filhos?','EnsinoMédio?','Educação?']
     #print(Atributos)
     ID3(Tabela,Atributos,Res,T,grafo,"INICIO")
-    pos = nx.spring_layout(grafo, seed=10)
+    pos = nx.spring_layout(grafo, seed=200)
     nx.draw(grafo,pos,with_labels=True)
     plt.savefig("grafo.png")
 

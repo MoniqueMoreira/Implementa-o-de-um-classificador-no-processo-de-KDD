@@ -1,7 +1,7 @@
 import random
 import pandas as pd
 
-tab = pd.read_excel('c:/Users/moniq/Documents/UFAL/IA 2021.1/KDD/tabela.xlsx')
+tab = pd.read_excel('c:/Users/moniq/Documents/UFAL/IA 2021.1/ID3/tabela.xlsx')
 
 # Retirada de Colunas(Atributos) indesejadas
 tab.drop(columns=["ID","Nome","Endereço","Email"],inplace=True)
@@ -11,12 +11,12 @@ tab.drop(columns=["ID","Nome","Endereço","Email"],inplace=True)
 # Transformando Coluna idade para faixa etaria
 #print(tab.loc[0:199,["Idade"]])
 for x in range(200):
-    if tab.loc[x,"Idade"] <= 31:
-        tab.loc[x,"Idade"] = "18-31"
-    elif tab.loc[x,"Idade"] > 31 and tab.loc[x,"Idade"]<= 44:
-        tab.loc[x,"Idade"] = "32-44"
+    if tab.loc[x,"Idade"] <= 32:
+        tab.loc[x,"Idade"] = "18-32"
+    elif tab.loc[x,"Idade"] > 32 and tab.loc[x,"Idade"]<= 46:
+        tab.loc[x,"Idade"] = "33-46"
     else:
-        tab.loc[x,"Idade"] = "42-60"
+        tab.loc[x,"Idade"] = "46-60"
 #print(tab.loc[0:199,["Idade"]])
 #print(tab.head(200))
 

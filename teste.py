@@ -5,7 +5,7 @@ import pandas as pd
 
 #Base de treinamento
 def Base():
-    Teste = pd.read_excel('c:/Users/moniq/Documents/UFAL/IA 2021.1/KDD/Teste.xlsx')
+    Teste = pd.read_excel('c:/Users/moniq/Documents/UFAL/IA 2021.1/ID3/Teste.xlsx')
     Teste.reset_index(inplace=True, drop=True)
     return Teste
 
