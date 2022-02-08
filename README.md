@@ -8,7 +8,7 @@ Quaria uma problema que podesse classificar pessoas que iria ou não para faculd
 
 Atravez deste site, escolhi alguns atributos que iria colocar no processo de classificação(Idade,Filhos?,Trabalha?...) e minha coluna de analise(Faculdade?) e mais algumas colunas como Nome, email para simular uma tabela real, assim criando a ***Tabela.xlsx***.
 
-![Screenshot](tabela.png)
+![Screenshot](Tabela.png)
 
 Com a tabela pronta comecei a fase do KDD no arquivo ***KDD.py***, fiz a retirada de colunas que não queria, fiz a transformação de algumas resposta com para coluna ***Trabalha?*** que antes erá ***True e False*** para ***Empregado e Desempregado***, a transformação de Colunas com idade para faixa etaria dividindo entre 18-32, 33-46 e 46-60 anos para se adequa a idade estabelacida durante a criação da tabela.
 
