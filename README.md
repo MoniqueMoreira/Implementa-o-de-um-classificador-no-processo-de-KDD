@@ -24,15 +24,21 @@ Agora com grafico gerado, vamos para faze de teste, onde ele pega cada linha da 
 (imagem: https://medium.com/pyladiesbh/m%C3%A9tricas-de-avalia%C3%A7%C3%A3o-de-classificadores-6aadc3dacd51)
 
 VP -> verdadeiro positivo,
+
 VN-> verdadeiro negativo,
+
 FP -> falso positivo,
+
 FN -> falso negativo.
 
 Com a matriz podemos calcular as metricas:
 
 Acurácia = (VP + VN)/(VP + VN + FP + FN)
+
 Tx. Erro = (FP + FN)/(VP + VN + FP + FN)
+
 Recall =  VP / (VP + FN) 
+
 Precisão = VP / (VP + FP)
 
 Obtendo assim:
