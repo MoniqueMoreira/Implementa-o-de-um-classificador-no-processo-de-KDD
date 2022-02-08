@@ -18,7 +18,9 @@ Também no arquivo KDD.py fiz a separação dos casos aleatóriamente que seria 
 
 Com processo do KDD concluido, comecei a gera o algoritmo do ***ID3*** no arquivo ***id3.py***,  onde separei manualmente os atributos que queria ultilizar para classificar, fazendo a entropia do da coluna ***Faculdade?*** e a entropia do atributo anlisado e calculava a entropia total(Ganho), aquela que obtece o maior ganho seria escolhido, separaria pelas suas possiveis resposta em outra subtabelas, e chamaria de novo para selecionar o proximo atributo com maior ganho,até quando não ouver mais atributos ou não tiver mais variações de resposta.
 
-Agora com grafico gerado, vamos para faze de teste, onde ele pega cada linha da tabela teste e percorre o grafo até chega em uma classificação, e adicionado na tabela para ser comparado com real resposta, apois classificar geramos a matriz de confusão, sendo :
+![Screenshot](grafo.png)
+
+Agora com grafo gerado, vamos para faze de teste, onde ele pega cada linha da tabela teste e percorre o grafo até chega em uma classificação, e adicionado na tabela para ser comparado com real resposta, apois classificar geramos a matriz de confusão, sendo :
 
 ![Screenshot](MC.png)
 (imagem: https://medium.com/pyladiesbh/m%C3%A9tricas-de-avalia%C3%A7%C3%A3o-de-classificadores-6aadc3dacd51)
